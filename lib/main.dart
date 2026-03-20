@@ -8,8 +8,13 @@ class MyApp extends StatelessWidget{
   const MyApp({Key? key});
   @override
   Widget build(BuildContext context){
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      useMaterial3: true,
+    ),
       home: HomePage(),
+
     );
     
   }
@@ -58,8 +63,11 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Version: $_aglVersion'),
-          Text('Name: Prachi Jha'),
+          const SizedBox(height: 20),
+          Text('Version: $_aglVersion', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          const SizedBox(height: 20),
+          Text('Name: Prachi Jha', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300, letterSpacing: 2),),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
             setState(() {
@@ -68,12 +76,14 @@ class _HomePageState extends State<HomePage> {
           },
           child: Text('Show Image'),
           ),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               _player.play(AssetSource('fahhhhh.mp3'));
               },
             
           child: Text('Play Sound'),),
+          const SizedBox(height: 20),
           if (showImage) Image.asset('assets/images.jpeg'),
           
         
