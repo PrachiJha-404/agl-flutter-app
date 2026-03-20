@@ -1,17 +1,19 @@
-# agl_quiz_app
+# AGL GSoC 2026 Quiz — Prachi Jha
 
-A new Flutter project.
+Getting started quiz for AGL GSoC 2026, Task #2: System Health Observability (eBPF).
 
-## Getting Started
+## What this repo contains
+- Flutter app displaying AGL version, name, and two interactive buttons
+- Yocto layer and recipe to package the app into an AGL image
 
-This project is a starting point for a Flutter application.
+## Progress
+- [x] Built AGL master branch image from source using Yocto
+- [x] Booted AGL 21.90.0 (vimba) in QEMU emulator
+- [ ] Flutter quiz app
+- [ ] Yocto recipe
+- [ ] Rebuild AGL image with app included
+- [ ] Video recording
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
+Built on GCP e2-standard-8, Ubuntu 22.04, 400GB disk.
+AGL image: agl-ivi-demo-flutter, target: qemux86-64
