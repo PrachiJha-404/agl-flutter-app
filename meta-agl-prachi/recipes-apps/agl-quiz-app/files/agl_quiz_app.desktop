@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=AGL Quiz App
+Exec=flutter-auto -b /usr/share/flutter/agl_quiz_app/3.38.3/release --xdg-shell-app-id agl_quiz_app --fullscreen
+Icon=agl_quiz_app
+Type=Application
+Categories=GTK;
