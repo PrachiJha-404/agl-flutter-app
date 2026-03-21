@@ -19,4 +19,23 @@
 - Booted AGL 21.90.0 (vimba) in QEMU — first boot!
 - Verified /etc/os-release contains version info Flutter app will read
 - Set up Flutter locally on Ubuntu 22.04
-- Default Flutter demo app running — ready to build quiz app
+- Built Flutter quiz app: AGL version display, name, image button, sound button
+- Fixed snap Flutter linker issues, switched to git Flutter
+- App working on Ubuntu desktop — pushed to GitHub
+
+## Day 4 — Mar 20
+- Created meta-agl-prachi Yocto layer with agl-quiz-app recipe
+- Hit pubspec.lock SDK version mismatch (Dart 3.10.1 vs 3.11.3)
+- Fixed with PUBSPEC_IGNORE_LOCKFILE = "1" after reading common.inc source
+- App recipe built successfully
+- Added to AGL image via IMAGE_INSTALL:append
+- Full image rebuild succeeded — app baked in
+
+## Day 5 — Mar 21
+- Set up VNC to see AGL graphical output (opened GCP firewall port 5901)
+- Fixed weston.ini: removed rotate-90 transform, added vnc backend
+- App launching via flutter-auto with correct Wayland environment
+- "AGL Quiz App" title visible in AGL alongside homescreen
+- App renders fullscreen (1920x720) with LIBGL_ALWAYS_SOFTWARE=1
+- Stuck on: AGL warning screen needs dismissal, no .desktop file for applaunchd
+- Next: add appinfo.json/.desktop file to recipe for proper app launch integration
